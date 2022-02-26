@@ -1,0 +1,15 @@
+overwrite: true
+schema: "https://rickandmortyapi.com/graphql"
+documents:
+  - "./src/**/*.{graphql,gql,tsx}"
+generates:
+  src/graphql/types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-graphql-request"
+    config:
+      rawRequest: false
+  src/graphql/fragmentTypes.json:
+    plugins:
+      - "fragment-matcher"
